@@ -1,6 +1,6 @@
-## 1. Installing VScode hello
+## 1. Installing VScode
 - Download and install VScode if you haven't already: https://code.visualstudio.com/
-- If you do everything correctly it should look like this when you launch the app: ![image](https://ctomlin1.github.io/cse15l-lab-reports/lab1/images/installingvscode.png)
+- If you do everything correctly it should look like this when you launch the app: ![](https://ctomlin1.github.io/cse15l-lab-reports/lab1/images/installingvscode.png)
 ## 2. Remotely Connecting
 - Connect to the remote host using the command ```$ ssh cs15lfa22ny@ieng6.ucsd.edu```
 - Enter the password if needed and you should get a result like this: ![](https://github.com/ctomlin1/cse15l-lab-reports/blob/main/lab1/images/remotelyconnecting.png)
