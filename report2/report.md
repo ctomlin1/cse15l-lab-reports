@@ -3,26 +3,26 @@
 
 ```
 ArrayList<String> list = new ArrayList<>();
-    public String handleRequest(URI url) {
-        if (url.getPath().contains("/add")) {
-            String[] parameters = url.getQuery().split("=");
-            if(!parameters[0].equals("s")) return "error";
-            if(list.contains(parameters[1])) return "error: item already in list";
-            list.add(parameters[1]);
-            return "added \"" + parameters[1] + "\" to the list";
-        } else if(url.getPath().contains("/search")) {
-            String[] parameters = url.getQuery().split("=");
-            if(!parameters[0].equals("s")) return "error";
-            String ret = "";
-            for(String s : list) {
-                if(s.contains(parameters[1])) {
-                    ret += s + " ";
-                }
+public String handleRequest(URI url) {
+    if (url.getPath().contains("/add")) {
+        String[] parameters = url.getQuery().split("=");
+        if(!parameters[0].equals("s")) return "error";
+        if(list.contains(parameters[1])) return "error: item already in list";
+        list.add(parameters[1]);
+        return "added \"" + parameters[1] + "\" to the list";
+    } else if(url.getPath().contains("/search")) {
+        String[] parameters = url.getQuery().split("=");
+        if(!parameters[0].equals("s")) return "error";
+        String ret = "";
+        for(String s : list) {
+            if(s.contains(parameters[1])) {
+                ret += s + " ";
             }
-            return ret;
         }
-        return "error";
+        return ret;
     }
+    return "error";
+}
 ```
 1. The handleRequest method is called with the url "localhost:4000/add?s=anewstringtoadd". The string "anewstringtoadd" is added to list, which was previously empty. ![](https://ctomlin1.github.io/cse15l-lab-reports/report2/add1.png)
 2. The handleRequest method is called again with the url "localhost:4000/add?s=pineapple". The string "pineapple" is added to list, which now contains the strings "anewstringtoadd" and "apple". ![](https://ctomlin1.github.io/cse15l-lab-reports/report2/add2.png)
